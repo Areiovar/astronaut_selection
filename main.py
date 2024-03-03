@@ -2,6 +2,7 @@ from flask import Flask, url_for, request
 
 app = Flask(__name__)
 
+
 @app.route('/astronaut_selection')
 def bootstrap():
     if request.method == 'GET':
@@ -36,7 +37,7 @@ def bootstrap():
                                               <option>Среднее профессиональное</option>
                                               <option>Высшее I степени — бакалавриат</option>
                                               <option>Высшее II степени — специалитет, магистратура</option>
-                                              <option>Высшее III степени — подготовка кадров высшей квалификации</option>                                              
+                                              <option>Высшее III степени — подготовка кадров высшей квалификации</option>
                                             </select>
                                          </div>
                                         <div class="form-group" style="margin-top: 15px;">
@@ -98,7 +99,7 @@ def bootstrap():
                                         </div>
                                         </div>
                                         <div class="form-group" style="margin-top: 15px;">
-                                            <label for="about">Почему вы хотите принять участие в миссии? </label> 
+                                            <label for="about">Почему вы хотите принять участие в миссии? </label>
                                             <textarea class="form-control" id="about" rows="3" name="about"></textarea>
                                         </div>
 
@@ -106,7 +107,7 @@ def bootstrap():
                                             <label for="photo">Приложите фотографию</label>
                                             <input type="file" class="form-control-file" id="photo" name="file">
                                         </div>
-                                        
+
                                         <div class="form-group form-check" style="margin-top: 15px;">
                                             <input type="checkbox" class="form-check-input" id="acceptRules" name="accept">
                                             <label class="form-check-label" for="acceptRules">Готовы остаться на Марсе?</label>
@@ -117,14 +118,15 @@ def bootstrap():
                               </body>
                             </html>'''
     elif request.method == 'POST':
-        print (request.form['email'])
-        print (request.form['password'])
-        print (request.form['class'])
-        print (request.form['file'])
-        print (request.form['about'])
-        print (request.form['accept'])
-        print (request.form['sex'])
+        print(request.form['email'])
+        print(request.form['password'])
+        print(request.form['class'])
+        print(request.form['file'])
+        print(request.form['about'])
+        print(request.form['accept'])
+        print(request.form['sex'])
         return "Форма отправлена"
+
 
 if __name__ == '__main__':
     app.run('127.0.0.1', 8080)
